@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>ES6</title>
+	</head>
+	<body>
+		<h2>ES6-演示</h2>
+		<script>
+			function sun(x,y,z){
+				let total = 0;
+				if(x)total+=x;
+				if(y)total+=y;
+				if(z)total+=z;
+				console.log(`total:${total}`)
+			}
+			sun(5,'',9);
+			
+			//es6
+			function sun2(...m){
+				let total = 0;
+				for(var i of m){
+					total +=i;
+				}
+				console.log(`total:${total}`)
+			}
+			sun2(4,8,9,10)
+			
+			//es6箭头函数
+			let sun3 = (...m)=>{
+				let total = 0;
+				for(var i of m){
+					total +=i;
+				}
+				console.log(`total:${total}`)
+			}
+			sun3(4,8,9,10)
+			
+			//es6数组扩展
+			var [x,y] = [4,8]
+			console.log(...[4,8]);
+			let arr1 = [1,3];
+			let arr2 = [2,4];
+			console.log("concat:"+arr1.concat(arr2));
+			console.log([...arr1,...arr2]);
+			
+			//es6解构
+//			var [x,y] = [4,8];
+			var [x,...y] = [4,8,10,30];
+			console.log([x,...y]);
+			
+			//变量
+			let [a,b,c] = "ES6";
+			console.log(a);
+			console.log(b);
+			console.log(c);
+			
+			let xy = [...'ES6'];
+			console.log(xy);
+		</script>
+	</body>
+</html>
